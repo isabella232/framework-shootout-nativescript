@@ -1,2 +1,2 @@
 var application = require("application");
-application.start({ moduleName: "views/main-page/main-page" });
+application.start({ moduleName: "views/year/year" });

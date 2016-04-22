@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <Page.actionBar>
+        <ActionBar title="Year"></ActionBar>
+    </Page.actionBar>
+    <GridLayout rows="*" columns="*">
+        <ListView items="{{ years }}" row="0" col="0" itemTap="gotoYear">
+            <ListView.itemTemplate>
+                <Label text="{{ ModelYear }}"/>
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" col="0" row="0"/>
+    </GridLayout>
+</Page>

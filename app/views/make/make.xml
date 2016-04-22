@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <Page.actionBar>
+        <ActionBar title="Make"></ActionBar>
+    </Page.actionBar>
+    <GridLayout rows="*" columns="*">
+        <ListView items="{{ makes }}" row="0" col="0" itemTap="gotoMake">
+            <ListView.itemTemplate>
+                <Label text="{{ Make }}"/>
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" col="0" row="0"/>
+    </GridLayout>
+</Page>
