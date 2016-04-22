@@ -1,37 +1,21 @@
-var Observable = require("data/observable").Observable;
-var frameModule = require("ui/frame");
-var NCAPModel = require("~/models/ncap");
+const frameModule = require('ui/frame');
+const NCAPModel = require('~/models/ncap');
+const loadToContext = require('~/utils/loadToContext');
 
-var ctx = new Observable({
-    years: [],
-    isLoading: false
-});
+const ctx = NCAPModel.getEmptyPlaceholder();
 
-var loadYears = function () {
-    ctx.set('isLoading', true);
-    NCAPModel.get().then(function (r) {
-        ctx.years = r;
-        ctx.set('isLoading', false);
-    }, function (err) {
-        ctx.set("isLoading", false);
-        ctx.makes = [{Make: err.message}];
-        throw err;
-    })
-}
-
-exports.onNavigatingTo = function onNavigatingTo(args) {
-    var page = args.object;
+exports.onNavigatingTo = args => {
+    const page = args.object;
     page.bindingContext = ctx;
 
-    loadYears();
+    loadToContext(ctx, '');
 };
 
-
-exports.gotoYear = function (args) {
+exports.gotoMakes = args => {
     frameModule.topmost().navigate({
         moduleName: 'views/make/make',
         context: {
-            year: ctx.years[args.index].ModelYear
+            year: ctx.items[args.index].ModelYear
         }
     });
-}
+};

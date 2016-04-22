@@ -1,21 +1,27 @@
-var http = require("http");
+const http = require('http');
+const Observable = require('data/observable').Observable;
 
-var apiURL = "http://www.nhtsa.gov/webapi/api/SafetyRatings";
-var apiParams = "?format=json&callback=myCallback";
+const apiURL = 'http://www.nhtsa.gov/webapi/api/SafetyRatings';
+const apiParams = '?format=json&callback=myCallback';
 
-exports.get = function (path) {
+exports.getEmptyPlaceholder = () => new Observable({
+    items: [],
+    isLoading: false
+});
+
+exports.get = path => {
     path = path || '';
-    var promise = new Promise(function (resolve, reject) {
-        http.getJSON(apiURL + path + apiParams).then(function (r) {
+    const promise = new Promise((resolve, reject) => {
+        http.getJSON(apiURL + path + apiParams).then(r => {
             if (r && r.Results && r.Results.length) {
                 resolve(r.Results);
             } else {
-                reject(new Error("Malformed JSON received."));
+                reject(new Error('Malformed JSON received.'));
             }
-        }, function (e) {
+        }, e => {
             reject(e);
         });
     });
 
     return promise;
-}
+};

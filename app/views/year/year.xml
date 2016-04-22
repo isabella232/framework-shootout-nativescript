@@ -3,7 +3,7 @@
         <ActionBar title="Year"></ActionBar>
     </Page.actionBar>
     <GridLayout rows="*" columns="*">
-        <ListView items="{{ years }}" row="0" col="0" itemTap="gotoYear">
+        <ListView items="{{ items }}" row="0" col="0" itemTap="gotoMakes">
             <ListView.itemTemplate>
                 <Label text="{{ ModelYear }}"/>
             </ListView.itemTemplate>

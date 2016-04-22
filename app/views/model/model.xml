@@ -1,11 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
     <Page.actionBar>
-        <ActionBar title="Make"></ActionBar>
+        <ActionBar title="Model"></ActionBar>
     </Page.actionBar>
     <GridLayout rows="*" columns="*">
-        <ListView items="{{ items }}" row="0" col="0" itemTap="gotoModels">
+        <ListView items="{{ items }}" row="0" col="0" itemTap="gotoVehicles">
             <ListView.itemTemplate>
-                <Label text="{{ Make }}"/>
+                <Label text="{{ Model }}"/>
             </ListView.itemTemplate>
         </ListView>
         <ActivityIndicator busy="{{ isLoading }}" col="0" row="0"/>
