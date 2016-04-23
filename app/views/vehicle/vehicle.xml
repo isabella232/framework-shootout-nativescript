@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <Page.actionBar>
+        <ActionBar title="Vehicle"></ActionBar>
+    </Page.actionBar>
+    <GridLayout rows="*" columns="*">
+        <ListView items="{{ items }}" row="0" col="0" itemTap="gotoDescription">
+            <ListView.itemTemplate>
+                <Label text="{{ VehicleDescription }}"/>
+            </ListView.itemTemplate>
+        </ListView>
+        <ActivityIndicator busy="{{ isLoading }}" col="0" row="0"/>
+    </GridLayout>
+</Page>

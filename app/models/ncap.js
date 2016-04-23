@@ -10,7 +10,7 @@ exports.getEmptyPlaceholder = () => new Observable({
 });
 
 exports.get = path => {
-    path = path || '';
+    path = path ? encodeURI(path) : '';
     const promise = new Promise((resolve, reject) => {
         http.getJSON(apiURL + path + apiParams).then(r => {
             if (r && r.Results && r.Results.length) {
