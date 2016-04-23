@@ -1,20 +1,11 @@
-﻿.title {
-    font-size: 30;
-    horizontal-align: center;
-    margin: 20;
-}
-
-button {
+﻿Button {
     font-size: 42;
     horizontal-align: center;
 }
 
-.message {
-    font-size: 20;
-    color: #284848;
-    horizontal-align: center;
-    margin: 0 20;
-    text-align: center;
+ActivityIndicator {
+    width: 30;
+    color: #2E6DAD;
 }
 
 Label {
@@ -24,6 +15,20 @@ Label {
 ActionBar {
     color: white;
     background-color: #2E6DAD;
+}
+
+.title {
+    font-size: 30;
+    horizontal-align: center;
+    margin: 20;
+}
+
+.message {
+    font-size: 20;
+    color: #284848;
+    horizontal-align: center;
+    margin: 0 20;
+    text-align: center;
 }
 
 .card {
@@ -42,3 +47,4 @@ ActionBar {
     background-color: #2E6DAD;
     color: white;
 }
+

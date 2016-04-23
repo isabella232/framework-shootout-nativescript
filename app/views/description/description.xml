@@ -1,8 +1,10 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" xmlns:imageLoader="components/imageLoader">
     <Page.actionBar>
         <ActionBar title="Description"></ActionBar>
     </Page.actionBar>
+    <ScrollView>
     <StackLayout>
+        <imageLoader:imageLoader imgSrc="{{getField('VehiclePicture')}}"/>
         <Label text="{{ vehicle.VehicleDescription }}" class="page-header"/>
         <ActivityIndicator busy="{{ isLoading }}" visibility="{{isLoading ? 'visible' : 'collapsed'}}"/>
         <StackLayout class="card">
@@ -34,12 +36,16 @@
             </DockLayout>
 
         </StackLayout>
-        <StackLayout class="card">
+        <StackLayout class="card" id="imageContainer">
             <Label text="Crash Test Pictures" class="list-header"/>
+            <imageLoader:imageLoader imgSrc="{{getField('FrontCrashPicture')}}" imgTitle="Front Crash"/>
+            <imageLoader:imageLoader imgSrc="{{getField('SideCrashPicture')}}" imgTitle="Side Crash"/>
+            <imageLoader:imageLoader imgSrc="{{getField('SidePolePicture')}}" imgTitle="Side Pole"/>
         </StackLayout>
         <StackLayout class="card">
             <Label text="Recalls" class="list-header"/>
             <Label text="{{'This vehicle is subject to ' + vehicle.RecallsCount + ' recalls.'}}"/>
         </StackLayout>
     </StackLayout>
+</ScrollView>
 </Page>

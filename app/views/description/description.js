@@ -4,11 +4,20 @@ const ctx = NCAPModel.getEmptyPlaceholder();
 
 exports.onNavigatingTo = args => {
     const page = args.object;
-    page.bindingContext = ctx;
 
     const {vehicleID, vehicleDesc} = page.navigationContext;
 
-    loadVehicle(vehicleID);
+    const promise = loadVehicle(vehicleID);
+
+    ctx.getField = field => {
+        return promise.then(() => {
+            return ctx.vehicle[field];
+        }, err => {
+            throw err;
+        });
+    };
+
+    page.bindingContext = ctx;
 };
 
 const loadVehicle = (vehicleID) => {
@@ -21,7 +30,7 @@ const loadVehicle = (vehicleID) => {
         ctx.set('vehicle', {VehicleDescription: err.message});
         throw err;
     });
-    loadToContext(ctx, '/VehicleId/' + vehicleID).then(() => {
-        ctx.set('vehicle', ctx.items[0]);
-    });
 };
+
+exports.getField = () => {
+}
