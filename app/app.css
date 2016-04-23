@@ -18,11 +18,27 @@ button {
 }
 
 Label {
-    padding: 20;
-    text-align: center;
+    padding: 15;
 }
 
 ActionBar {
     color: white;
     background-color: #2E6DAD;
+}
+
+.card {
+    border-color: #2E6DAD;
+    border-width: 1;
+    border-radius: 5;
+    width: 95%;
+    margin-bottom: 10;
+}
+
+.page-header {
+    font-weight: bold;
+}
+
+.list-header {
+    background-color: #2E6DAD;
+    color: white;
 }

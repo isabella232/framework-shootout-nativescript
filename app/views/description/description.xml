@@ -1,0 +1,45 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <Page.actionBar>
+        <ActionBar title="Description"></ActionBar>
+    </Page.actionBar>
+    <StackLayout>
+        <Label text="{{ vehicle.VehicleDescription }}" class="page-header"/>
+        <ActivityIndicator busy="{{ isLoading }}" visibility="{{isLoading ? 'visible' : 'collapsed'}}"/>
+        <StackLayout class="card">
+            <Label text="Star Ratings" class="list-header"/>
+
+            <DockLayout stretchLastChild="true">
+                <Label text="{{ vehicle.OverallRating }}" dock="right"/>
+                <Label text="Overall" dock="left"/>
+            </DockLayout>
+
+            <DockLayout stretchLastChild="true">
+                <Label text="{{ vehicle.FrontCrashDriversideRating }}" dock="right"/>
+                <Label text="Front Crash" dock="left"/>
+            </DockLayout>
+
+            <DockLayout stretchLastChild="true">
+                <Label text="{{ vehicle.SideCrashDriversideRating }}" dock="right"/>
+                <Label text="Side Crash" dock="left"/>
+            </DockLayout>
+
+            <DockLayout stretchLastChild="true">
+                <Label text="{{ vehicle.SidePoleCrashRating }}" dock="right"/>
+                <Label text="Side Pole Crash" dock="left"/>
+            </DockLayout>
+
+            <DockLayout stretchLastChild="true">
+                <Label text="{{ vehicle.RolloverRating }}" dock="right"/>
+                <Label text="Rollover Crash" dock="left"/>
+            </DockLayout>
+
+        </StackLayout>
+        <StackLayout class="card">
+            <Label text="Crash Test Pictures" class="list-header"/>
+        </StackLayout>
+        <StackLayout class="card">
+            <Label text="Recalls" class="list-header"/>
+            <Label text="{{'This vehicle is subject to ' + vehicle.RecallsCount + ' recalls.'}}"/>
+        </StackLayout>
+    </StackLayout>
+</Page>
