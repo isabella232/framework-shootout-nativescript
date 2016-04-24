@@ -4,9 +4,8 @@
     </Page.actionBar>
     <ScrollView>
     <StackLayout>
-        <imageLoader:imageLoader imgSrc="{{getField('VehiclePicture')}}"/>
+        <imageLoader:imageLoader imgSrc="{{vehicle.VehiclePicture}}"/>
         <Label text="{{ vehicle.VehicleDescription }}" class="page-header"/>
-        <ActivityIndicator busy="{{ isLoading }}" visibility="{{isLoading ? 'visible' : 'collapsed'}}"/>
         <StackLayout class="card">
             <Label text="Star Ratings" class="list-header"/>
 
@@ -38,9 +37,9 @@
         </StackLayout>
         <StackLayout class="card" id="imageContainer">
             <Label text="Crash Test Pictures" class="list-header"/>
-            <imageLoader:imageLoader imgSrc="{{getField('FrontCrashPicture')}}" imgTitle="Front Crash"/>
-            <imageLoader:imageLoader imgSrc="{{getField('SideCrashPicture')}}" imgTitle="Side Crash"/>
-            <imageLoader:imageLoader imgSrc="{{getField('SidePolePicture')}}" imgTitle="Side Pole"/>
+            <imageLoader:imageLoader imgSrc="{{vehicle.FrontCrashPicture}}" imgTitle="Front Crash"/>
+            <imageLoader:imageLoader imgSrc="{{vehicle.SideCrashPicture}}" imgTitle="Side Crash"/>
+            <imageLoader:imageLoader imgSrc="{{vehicle.SidePolePicture}}" imgTitle="Side Pole"/>
         </StackLayout>
         <StackLayout class="card">
             <Label text="Recalls" class="list-header"/>

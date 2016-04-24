@@ -1,23 +1,32 @@
 const frameModule = require('ui/frame');
 const NCAPModel = require('~/models/ncap');
-const loadToContext = require('~/utils/loadToContext');
 
 const ctx = NCAPModel.getEmptyPlaceholder();
 
 exports.onNavigatingTo = args => {
     const page = args.object;
+    if (args.isBackNavigation) {
+        return;
+    }
     page.bindingContext = ctx;
 
-    const {year, make, model} = page.navigationContext;
-    loadToContext(ctx, '/modelyear/' + year +'/make/' + make + '/model/' + model);
+    const {items} = page.navigationContext;
+    ctx.set('items', items);
 };
 
 exports.gotoDescription = args => {
-    frameModule.topmost().navigate({
-        moduleName: 'views/description/description',
-        context: {
-            vehicleID: ctx.items[args.index].VehicleId,
-            vehicleDesc: ctx.items[args.index].VehicleDescription
-        }
+    const {VehicleId} = ctx.items[args.index];
+    ctx.set('isLoading', true);
+    NCAPModel.get('/VehicleId/' + VehicleId).then(res => {
+        ctx.set('isLoading', false);
+        frameModule.topmost().navigate({
+            moduleName: 'views/description/description',
+            context: {
+                vehicle: res[0]
+            }
+        });
+    }, err => {
+        ctx.set('isLoading', false);
+        throw err;
     });
 };

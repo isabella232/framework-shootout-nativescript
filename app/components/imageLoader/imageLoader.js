@@ -9,6 +9,7 @@ exports.onLoad = args => {
     const obj = args.object;
 
     const container = obj.getViewById('imageContainer');
+    container.removeChildren();
     const indicator = new ActivityIndicatorModule.ActivityIndicator();
     indicator.busy = true;
 
@@ -16,18 +17,17 @@ exports.onLoad = args => {
 
     const label = new LabelModule.Label();
 
-    obj.imgSrc.then(url => {
-        container.addChild(indicator);
-        ImageSourceModule.fromUrl(url).then(res => {
-            image.imageSource = res;
-            container.addChild(image);
-            container.removeChild(indicator);
-        }, err => {
-            if (obj.imgTitle) {
-                label.text = `${obj.imgTitle} picture cannot be loaded`;
-                container.addChild(label);
-            }
-            container.removeChild(indicator);
-        });
-    })
+    container.addChild(indicator);
+
+    ImageSourceModule.fromUrl(obj.imgSrc).then(res => {
+        image.imageSource = res;
+        container.addChild(image);
+        container.removeChild(indicator);
+    }, err => {
+        if (obj.imgTitle) {
+            label.text = `${obj.imgTitle} picture cannot be loaded`;
+            container.addChild(label);
+        }
+        container.removeChild(indicator);
+    });
 };
