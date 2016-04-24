@@ -1,4 +1,7 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" xmlns:imageLoader="components/imageLoader">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+    navigatingTo="onNavigatingTo"
+    xmlns:starRating="components/starRating"
+    xmlns:imageLoader="components/imageLoader">
     <Page.actionBar>
         <ActionBar title="Description"></ActionBar>
     </Page.actionBar>
@@ -10,27 +13,28 @@
             <Label text="Star Ratings" class="list-header"/>
 
             <DockLayout stretchLastChild="true">
-                <Label text="{{ vehicle.OverallRating }}" dock="right"/>
+                <starRating:starRating rating="{{ vehicle.OverallRating }}" dock="right"/>
+                <!--<Label text="{{ vehicle.OverallRating }}" dock="right"/>-->
                 <Label text="Overall" dock="left"/>
             </DockLayout>
 
             <DockLayout stretchLastChild="true">
-                <Label text="{{ vehicle.FrontCrashDriversideRating }}" dock="right"/>
+                <starRating:starRating rating="{{ vehicle.FrontCrashDriversideRating }}" dock="right"/>
                 <Label text="Front Crash" dock="left"/>
             </DockLayout>
 
             <DockLayout stretchLastChild="true">
-                <Label text="{{ vehicle.SideCrashDriversideRating }}" dock="right"/>
+                <starRating:starRating rating="{{ vehicle.SideCrashDriversideRating }}" dock="right"/>
                 <Label text="Side Crash" dock="left"/>
             </DockLayout>
 
             <DockLayout stretchLastChild="true">
-                <Label text="{{ vehicle.SidePoleCrashRating }}" dock="right"/>
+                <starRating:starRating rating="{{ vehicle.SidePoleCrashRating }}" dock="right"/>
                 <Label text="Side Pole Crash" dock="left"/>
             </DockLayout>
 
             <DockLayout stretchLastChild="true">
-                <Label text="{{ vehicle.RolloverRating }}" dock="right"/>
+                <starRating:starRating rating="{{ vehicle.RolloverRating }}" dock="right"/>
                 <Label text="Rollover Crash" dock="left"/>
             </DockLayout>
 

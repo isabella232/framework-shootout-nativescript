@@ -1,0 +1,10 @@
+Label.icon-fa {
+    font-family: fontawesome-webfont,FontAwesome;
+    font-size: 18;
+    padding: 15 3;
+    color: #2E6DAD;
+}
+
+StackLayout.starContainer {
+    padding-right: 15;
+}
