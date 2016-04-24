@@ -1,28 +1,27 @@
 {
-	"name": "tns-template-hello-world",
-	"main": "app.js",
-	"version": "1.7.0",
-	"author": "Telerik <support@telerik.com>",
-	"description": "Nativescript hello-world project template",
-	"license": "Apache-2.0",
-	"keywords": [
-		"telerik",
-		"mobile",
-		"nativescript",
-		"{N}",
-		"tns",
-		"appbuilder",
-		"template"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/NativeScript/template-hello-world.git"
-	},
-	"bugs": {
-		"url": "https://github.com/NativeScript/template-hello-world/issues"
-	},
-	"homepage": "https://github.com/NativeScript/template-hello-world",
-	"android": {
-		"v8Flags": "--expose_gc --harmony_destructuring --harmony_modules --harmony_default_parameters --harmony_sloppy_let"
-	}
+    "name": "Framwork shootout {N}",
+    "main": "app.js",
+    "version": "0.5.1",
+    "description": "Mobile framework shootout - Nativescript",
+    "license": "MIT",
+    "keywords": [
+        "telerik",
+        "mobile",
+        "nativescript",
+        "{N}",
+        "tns",
+        "appbuilder",
+        "template"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ModusCreateOrg/framework-shootout-nativescript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ModusCreateOrg/framework-shootout-nativescript/issues"
+    },
+    "homepage": "https://github.com/ModusCreateOrg/framework-shootout-nativescript",
+    "android": {
+        "v8Flags": "--expose_gc --harmony_destructuring --harmony_modules --harmony_default_parameters --harmony_sloppy_let"
+    }
 }
