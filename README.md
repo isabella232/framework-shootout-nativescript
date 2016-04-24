@@ -1,5 +1,7 @@
 # Framework Shootout - Nativescript
 
+![Can't load screencast](https://www.dropbox.com/s/wbau9daye5axl8s/ios_nscript.gif?raw=1)
+
 ## Setup
 1. Install nativescript by following the [official guide](http://docs.nativescript.org/start/ns-setup-os-x).
 2. Change to root of this project and run `tns install`. This will install nativescript core modules and setup platforms.
