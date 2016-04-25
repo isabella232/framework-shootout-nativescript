@@ -45,7 +45,7 @@
             <imageLoader:imageLoader imgSrc="{{vehicle.SideCrashPicture}}" imgTitle="Side Crash"/>
             <imageLoader:imageLoader imgSrc="{{vehicle.SidePolePicture}}" imgTitle="Side Pole"/>
         </StackLayout>
-        <StackLayout class="card">
+        <StackLayout class="card" id="recallCard">
             <Label text="Recalls" class="list-header"/>
             <Label text="{{'This vehicle is subject to ' + vehicle.RecallsCount + ' recalls.'}}"/>
         </StackLayout>

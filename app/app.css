@@ -40,6 +40,10 @@ ActionBar {
     margin-bottom: 10;
 }
 
+.color-warning {
+    border-color: #A94442;
+}
+
 .page-header {
     font-weight: bold;
 }
@@ -49,3 +53,6 @@ ActionBar {
     color: white;
 }
 
+.color-warning .list-header {
+    background-color: #A94442;
+}
