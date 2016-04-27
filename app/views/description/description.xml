@@ -1,9 +1,12 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
     navigatingTo="onNavigatingTo"
+    xmlns:backButton="components/backButton"
     xmlns:starRating="components/starRating"
     xmlns:imageLoader="components/imageLoader">
     <Page.actionBar>
-        <ActionBar title="Description"></ActionBar>
+        <ActionBar title="Description">
+            <backButton:backButton text="Vehicle"/>
+        </ActionBar>
     </Page.actionBar>
     <ScrollView>
     <StackLayout>

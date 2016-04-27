@@ -1,0 +1,1 @@
+<NavigationButton text="Back" android.systemIcon="ic_menu_back" tap="goBack" id="navigationButton" loaded="onLoad"/>

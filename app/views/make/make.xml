@@ -1,6 +1,10 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:backButton="components/backButton"
+    navigatingTo="onNavigatingTo">
     <Page.actionBar>
-        <ActionBar title="Make"></ActionBar>
+        <ActionBar title="Make">
+            <backButton:backButton text="Year"/>
+        </ActionBar>
     </Page.actionBar>
     <GridLayout rows="*" columns="*">
         <ListView items="{{ items }}" row="0" col="0" itemTap="gotoModels">
